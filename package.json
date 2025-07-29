@@ -1,0 +1,18 @@
+{
+  "name": "gallery",
+  "version": "1.0.0",
+  "description": "SmartRecruiters Attrax - Task",
+  "author": "Piotr Ogórkiewicz",
+  "license": "ISC",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2",
+    "sass-embedded": "^1.89.2",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.6"
+  }
+}

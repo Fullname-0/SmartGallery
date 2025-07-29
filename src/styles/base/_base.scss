@@ -1,0 +1,20 @@
+@use "../abstracts" as abs;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: abs.$main-font, sans-serif;
+  background: abs.$bg-color;
+  min-height: 100vh;
+}

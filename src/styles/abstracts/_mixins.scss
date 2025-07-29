@@ -1,0 +1,22 @@
+@use "breakpoints" as bp;
+
+@mixin button-style {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 140%;
+}
+
+@mixin position-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media only screen and (max-width: bp.$bp-mobile) {
+      @content;
+    }
+  }
+  //Can be extended for other breakpoints
+}

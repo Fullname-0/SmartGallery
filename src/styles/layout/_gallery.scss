@@ -1,0 +1,114 @@
+@use '../abstracts' as abs;
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: abs.$container-max-width;
+  padding: 3rem;
+  margin: 0 auto;
+
+  @include abs.respond('mobile') {
+    align-items: flex-start;
+  }
+
+  &__content {
+    max-width: 80rem;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  &__images {
+    display: grid;
+    grid-template: 1fr / calc(790 / 1200 * 100%) calc(
+        100% - 3rem - calc(790 / 1200 * 100%)
+      );
+    gap: 3rem;
+
+    @include abs.respond('mobile') {
+      grid-template: auto / 1fr;
+    }
+
+    &-box {
+      display: grid;
+      gap: 3rem;
+      width: 100%;
+
+      &--left {
+        grid-template: 50rem 25rem / repeat(2, 1fr);
+
+        @include abs.respond('mobile') {
+          grid-template: none;
+          grid-template-rows: 50rem 50rem 25rem;
+        }
+      }
+
+      &--right {
+        grid-template: 25rem 50rem / 1fr;
+
+        @include abs.respond('mobile') {
+          grid-template: none;
+          grid-template-rows: 25rem 50rem;
+        }
+      }
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: abs.$image-radius;
+
+    &--span-column {
+      grid-column: span 2;
+
+      @include abs.respond('mobile') {
+        grid-column: span 1;
+      }
+    }
+
+    &-video {
+      position: relative;
+
+      &-button {
+        position: absolute;
+        @include abs.position-center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: abs.$full-radius;
+        z-index: 2;
+        cursor: pointer;
+        transition: abs.$transition;
+
+        &--margin-left {
+          margin-left: 0.3rem;
+        }
+      }
+    }
+  }
+
+  &__caption {
+    font-size: 1.333rem;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: abs.$color-black;
+  }
+}
