@@ -2,6 +2,7 @@
 
 .button {
   @include abs.button-style;
+  font-family: inherit;
   display: flex;
   align-items: center;
   gap: 0.8rem;
